@@ -1,0 +1,145 @@
+@model IEnumerable<AirBookingESW17.Models.Reserva>
+
+
+
+@{
+    ViewData["Title"] = "Planear viagem";
+
+    var db = Database.Open("AirBookingESW17");
+    var selectedData = db.Query("SELECT * FROM CidadeOrigem");
+    var grid = new WebGrid(source: selectedData);
+}
+<div style="margin: auto; width: auto;">
+    <div class="container" style="width: 400px; min-height: 400px; float: left;">
+        <div id="areaDeCaixaReserva">
+            <!--caixa transparente com conteúdo não transparente-->
+            <div id="caixaLarga" style="width:350px">
+
+                <h4 style="text-align:center;">Escolha já o seu voo</h4>
+               
+                @*<form style="margin-left: 20%;">
+                    <input type="radio" name="viagem" value="ida" checked style="text-align:center"> Ida &emsp;
+                    <input type="radio" name="viagem" value="volta" checked style="text-align:center"> Ida e Volta
+                    <p />
+
+                    Origem <select id="Select1" runat = "server" name="d1">
+                        <option></option>
+                       
+
+                    @Html.DropDownListFor(x => x.CidadeOrigem, class.cIDADE)
+                    </select>
+                    <p />
+                    Destino<select name="locations">
+                        <option value="paris">Paris</option>
+                        <option value="lisboa">Lisboa</option>
+                        <option value="porto">Porto</option>
+                        <option value="londres">Londres</option>
+                        <option value="ny">Nova Iorque</option>
+                    </select>
+                    <p />
+                    Nº de pessoas<select name="numPessoas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <p />
+                    Data de Ida <input id="dataIda" type="date" lang="pt-pt" /> <input id="formatedDate" type="hidden" />
+                    <p />
+                    Data de Volta <input id="dataVolta" type="date" /> <input id="formatedDate" type="hidden" />
+                    <p />
+                    <button id="mainbtn" style="width:100px;     margin-left:15%;"> Procurar </button>
+                </form>*@
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="container" style="width: 300px; min-height: 400px; float: left;">
+        <div id="areaDeCaixaReserva">
+            <div id="caixaLarga">
+               
+
+                <form method="get">
+                    <label for="procurarVoos">Procure o voo desejado:</label>
+                    <input type="text" name="procurarVoos" value="" />
+                    <input type="submit" name="submit" value="Procurar voos" />
+                    <br />
+                    (espaço para listar os voos)
+                    <br />
+
+                </form> 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!--
+               <input type="text" class="form-control" placeholder="Search" style="margin-left: 25%">
+                @*pesquisa inteligente*@
+                <br />
+                <h4 style="text-align:center;">Voos disponíveis e partilhados</h4>
+
+                @*<p>
+                        <a asp-action="Create">Create New</a>
+                    </p>*@
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Preco)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                        @{if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Preco)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <text>Lamentamos, mas não existem voos para lhe mostrar</text>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <h4 style="text-align:center;">Não encontra o que procura? Requisite um novo voo</h4>
+                <p />
+                <button id="mainbtn" style="margin-left:25%;" onclick="location.href='@Url.Action("Create", "Reservas")'">Requisitar novo voo</button>
+                    -->
+            </div>
+        </div>
+    </div>
+</div>

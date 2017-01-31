@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlhEMYMeWFkup/qoTWyLbfwAAAAACAAAAAAAQZgAAAAEAACAAAAB4yLNeSY8ZVlTaTC0iSOdbi3rkZcofV9qyOaRveAobkgAAAAAOgAAAAAIAACAAAAClxRbDZUUA9VZIafAmsOQB7104a9er1fy5UDwsKUz5foAAAACx1lmqgtkaDBP0JGhmVv6Sk+6jfoDupLrHopJjsrk4KOQJByFVMzLhMLY/EICenclkrZMqVTcg/UFEBhbe77ZyL+hkF4gMkP2FKaLNxSqXoIKLoUu+csjp4C8rN45RX/oobBlj1neGurXBK3IncKE/5kx0lEMCDUUZe6H1dkznM0AAAAAfdWuSN48K2sCTHZnWTU+ilqoNI6XfT23C73irsJjD4Lh2cukJKrAAO90MGvF3Dm2SK3VYS9l1pfJc5nlAUWr3</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:airbooking2017.database.windows.net,1433;Initial Catalog=airbooking2017;User Id=esw17@airbooking2017.database.windows.net;Password=airbooking_2017;</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

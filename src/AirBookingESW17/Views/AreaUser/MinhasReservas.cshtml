@@ -1,0 +1,41 @@
+@model IEnumerable<AirBookingESW17.Models.AreaUserViewModels.MinhasReservasViewModel>
+
+@{
+    ViewData["Title"] = "MinhasReservas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MinhasReservas</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+
+            if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <text> Lamentamos, mas não existem voos para lhe mostrar </text>
+            } 
+            }
+    </tbody>
+</table>

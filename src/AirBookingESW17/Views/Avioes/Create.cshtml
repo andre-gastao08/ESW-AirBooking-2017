@@ -1,0 +1,70 @@
+@model AirBookingESW17.Models.Aviao
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Aviao</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="AvCapacidade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AvCapacidade" class="form-control" />
+                <span asp-validation-for="AvCapacidade" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvNome" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AvNome" class="form-control" />
+                <span asp-validation-for="AvNome" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="AvPartilhado" />
+                    <label asp-for="AvPartilhado"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AvSerie" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AvSerie" class="form-control" />
+                <span asp-validation-for="AvSerie" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FrotaId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FrotaId" class ="form-control" asp-items="ViewBag.FrotaId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VooId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="VooId" class ="form-control" asp-items="ViewBag.VooId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

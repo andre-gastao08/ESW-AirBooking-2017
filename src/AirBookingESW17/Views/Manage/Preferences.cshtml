@@ -1,0 +1,46 @@
+﻿@model IList<PreferencesViewModel>
+@{
+    ViewData["Title"] = "Preferências";
+}
+
+<div class="container">
+    <div id="areaDeCaixaReserva" style="margin-left: 20%; ">
+        <!--caixa transparente com conteúdo não transparente-->
+        <div id="caixaLarga">
+
+            <ul class="nav nav-tabs"style=" width: 550px;  margin-bottom: 20px; float:left;">
+                <li><a asp-area="" asp-controller="Manage" asp-action="ChangePassword">Definições de conta</a></li>
+                <li class="active"><a href="#">Preferências</a></li>
+            </ul>
+            <br>
+            <!--asp-controller="Manage" asp-action="ChangePassword" asp-route-returnurl="@@ViewData["ReturnUrl"]"-->
+            <form method="post" class="conteudoCaixaTransparente">
+                <p>
+                    <input data-val="true" data-val-required="Tem de definir se quer receber newsletters" name="Newsletter" type="checkbox" value="true" />
+                    <input name="Newsletter" type="hidden" value="false" />
+                    <label for="Newsletter" style="font-weight:bold">Pretendo receber newsletters</label>
+                    <br />
+
+                    As suas preferências ajudam-nos a criar uma experiência mais personalizada.
+                    <br />
+
+                    (Could have, não é prioritário...)
+
+                    <br />
+
+                    [Em construção]
+
+                    <br />
+                    @*<button type="submit" id="mainbtn" style="width:250px; margin-left:10%;">Confirmar Alterações</button>*@
+
+                    <button id="mainbtn" style="width:250px; margin-left:10%;">Confirmar Alterações</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        
+            @section Scripts {
+                @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+            }
+        
